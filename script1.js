@@ -6,7 +6,7 @@ correct: "1",
 image: ""
 },
 2: {
-text: "Which archaeological tradition considers 'Harappan Civilization' as the most appropriate name due to Harappa being the first discovered site?",
+text: "Which tradition considers 'Harappan Civilization' as the most appropriate name due to Harappa being the first discovered site?",
 options: ["Archaeological", "Geographical", "Cultural", "Political"],
 correct: "1",
 image: ""
