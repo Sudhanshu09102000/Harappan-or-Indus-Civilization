@@ -1,460 +1,518 @@
-// ===============================
-// Script for Complete Lucent GK Mock
-// ===============================
+const explanations={
+  1: {
+text: "The oldest name of the Harappan civilization is Indus Civilization. The civilization was named as it was first discovered along the river Indus. The general term also refers to the geographical extent of settlements.",
+image: ""
+},
+2: {
+text: "According to archaeological tradition, the civilization is known as Harappan Civilization because Harappa was the first site to be discovered. This nomenclature is widely used by archaeologists.",
+image: ""
+},
+3: {
+text: "Geographically, the most suitable name is Indus-Saraswati Civilization, as the concentration of settlements was highest along the Indus and Saraswati river valleys, especially the Saraswati with about 80% of settlements.",
+image: ""
+},
+4: {
+text: "About 80% of Indus-Saraswati settlements were along the Saraswati river, indicating its importance in the civilization's development. The high concentration is a key marker of the civilization's geography.",
+image: ""
+},
+5: {
+text: "The most accepted period of the Harappan/Indus Civilization is 2500 BC–1750 BC, based on Carbon-14 dating. This time frame is used by most historians for reference.",
+image: ""
+},
+6: {
+text: "John Marshall was the first scholar to use the term 'Indus Civilization', which popularized its identification with the Indus Valley sites. His work led to greater recognition of the civilization.",
+image: ""
+},
+7: {
+text: "The Indus Civilization belongs to the Proto-Historic Period, specifically the Chalcolithic Age/Bronze Age. These periods are marked by the use of both copper and bronze tools.",
+image: ""
+},
+8: {
+text: "The Indus Civilization was spread over modern regions of Sindh, Baluchistan, Punjab, Haryana, Rajasthan, Gujarat, Western UP, and Northern Maharashtra. This wide area highlights its importance in ancient South Asia.",
+image: ""
+},
+9: {
+text: "Scholars generally believe the Harappa-Chaggar-Mohenjodaro axis represents the heartland of the Indus Civilization. This axis connected major urban sites.",
+image: ""
+},
+10: {
+text: "The northern-most site of Indus Civilization is Ropar, located on the banks of Sutlej in Punjab. There were earlier recognitions of other sites, but Ropar is now accepted as the northern-most.",
+image: ""
+},
+11: {
+text: "Ropar in Punjab was recognized as the earlier northern-most site. The site lies on the Sutlej, showing extended northern limits of the civilization.",
+image: ""
+},
+12: {
+text: "Manda was formerly considered the northern-most site, located on Chenab in Jammu and Kashmir. Its identification helped map the civilization's spread into northwestern regions.",
+image: ""
+},
+13: {
+text: "The southern-most site of Indus Civilization in Gujarat is Bhagatav (Kim). This marks the civilization's southern territorial extent in the state.",
+image: ""
+},
+14: {
+text: "Daimabad, located in Maharashtra, is now the southern-most site of Indus Civilization. Its finding extended the known limits of the civilization further south.",
+image: ""
+},
+15: {
+text: "Alamgirpur is the eastern-most site of the Indus Civilization. The site's discovery marks the civilization's farthest reach in the east.",
+image: ""
+},
+16: {
+text: "Alamgirpur is located on the Hindon river in Uttar Pradesh. This site is significant for mapping the civilization's eastern boundary.",
+image: ""
+},
+17: {
+text: "The western-most site of the Indus Civilization is Sutkagendor, which lies at the Dasht/Makran coast near the Pakistan-Iran border. This highlights the civilization's western limits.",
+image: ""
+},
+18: {
+text: "Sutkagendor is situated on the Dasht/Makran coast on the Pakistan-Iran border. The site marked the civilization's western access to trade via sea.",
+image: ""
+},
+19: {
+text: "Harappa and Mohenjodaro were the capital cities of the Indus Civilization. These sites were its administrative and urban centers.",
+image: ""
+},
+20: {
+text: "Major port sites in the Indus Civilization included Lothal, Sutkagendor, Allahdino, Balakot, and Kuntasi. These ports facilitated commerce and maritime activity.",
+image: ""
+},
+21: {
+text: "Harappa is located on the Ravi river. The settlement lies on the riverbank, attributing its historical significance to the waterway.",
+image: ""
+},
+22: {
+text: "Harappa is situated in the Sahiwal district. This district encompasses the archaeological site of Harappa.",
+image: ""
+},
+23: {
+text: "Harappa is found in Punjab province of Pakistan. The site is one of the major Indus Civilization locations in modern-day Pakistan.",
+image: ""
+},
+24: {
+text: "Daya Ram Sahni excavated Harappa in 1921. He was the first to undertake significant archaeological work at this site.",
+image: ""
+},
+25: {
+text: "Mohenjodaro lies on the Indus river. Its location contributed to the city’s development as a major urban center.",
+image: ""
+},
+26: {
+text: "Mohenjodaro is located in the Larkana district. This district is in Sindh province of Pakistan.",
+image: ""
+},
+27: {
+text: "Mohenjodaro is situated in Sindh province, Pakistan. It is one of the best-known centers of the Indus Civilization.",
+image: ""
+},
+28: {
+text: "Rakhal Das Bannerji is one of the key excavators of Mohenjodaro in 1922. He contributed significantly to its archaeological discovery.",
+image: ""
+},
+29: {
+text: "Chanhudaro is located in Sindh, Pakistan. The site forms part of the southern urban settlements of the Indus Civilization.",
+image: ""
+},
+30: {
+text: "Chanhudaro is situated on the Indus river. The river’s proximity influenced cultural and economic activities at the site.",
+image: ""
+},
+31: {
+text: "The river Bhogava flows by Lothal. This proximity allowed Lothal to serve as a key port and trading site.",
+image: ""
+},
+32: {
+text: "Ahmedabad district hosts Lothal. The site’s location is vital for understanding trade in ancient Gujarat.",
+image: ""
+},
+33: {
+text: "S.R. Rao excavated Lothal in 1954. His work brought the port city to international archaeological attention.",
+image: ""
+},
+34: {
+text: "Kalibanga is situated in Rajasthan state. The site’s discovery contributed to the mapping of Indus Civilization’s northern limits.",
+image: ""
+},
+35: {
+text: "The river Ghaggar flows by Kalibanga. Its waters supported settlement and agricultural practices at the site.",
+image: ""
+},
+36: {
+text: "Amalanand Ghosh was one of the excavators of Kalibanga. His findings expanded the understanding of black bangle culture at the site.",
+image: ""
+},
+37: {
+text: "Banawali is located in Haryana state. The region's archaeology emphasizes the extension of the Indus Civilization to eastern areas.",
+image: ""
+},
+38: {
+text: "Fatehabad is the district where Banawali is located. The district's archaeological record has been enhanced by the site's discovery.",
+image: ""
+},
+39: {
+text: "R. S. Bist excavated Banawali in 1973. His work uncovered notable findings about the settlement’s structure.",
+image: ""
+},
+40: {
+text: "Dholavira is in Kutch district. This large site marks the civilization’s western Indian extent.",
+image: ""
+},
+41: {
+text: "J.P. Joshi excavated Dholavira in 1967-68. The excavation revealed Dholavira’s significance for the Indus urban network.",
+image: ""
+},
+42: {
+text: "6 granaries in a row were found at Harappa. This adds to the evidence of organized grain storage and management.",
+image: ""
+},
+43: {
+text: "Workmen's quarters were discovered at Harappa, indicating a distinct area for workers within the urban setup.",
+image: ""
+},
+44: {
+text: "A figure of the Virgin-Goddess was found at Harappa. Such figurines suggest fertility and religious practices.",
+image: ""
+},
+45: {
+text: "Cemetery R-37 is a notable finding at Harappa. It was an important burial site for inhabitants.",
+image: ""
+},
+46: {
+text: "Stone symbols of Lingam and Yoni were excavated at Harappa. These symbols are representative of male and female sex organs and ancient ritual objects.",
+image: ""
+},
+47: {
+text: "Wheat and Barley grains were found in a wooden mortar at Harappa, demonstrating agricultural activities.",
+image: ""
+},
+48: {
+text: "The Great Granary and Great Bath are major archaeological finds at Mohenjodaro. These structures are considered the largest buildings of civilization.",
+image: ""
+},
+49: {
+text: "The Pashupati Mahadeva (Proto-Shiva) seal at Mohenjodaro features a human with horns. This is of religious and cultural importance.",
+image: ""
+},
+50: {
+text: "An Assembly hall was discovered at Mohenjodaro. Such halls were likely used for gatherings and administrative purposes.",
+image: ""
+},
+51: {
+text: "A bronze image was found at Mohenjodaro, showing expertise in metalwork. Bronze was a primary material for making statues and tools.",
+image: ""
+},
+52: {
+text: "2 Mesopotamian seals were discovered at Mohenjodaro. This highlights the civilization's overseas contact.",
+image: ""
+},
+53: {
+text: "56% of the total seals of the civilization were found at Mohenjodaro. The large number of seals signify extensive administrative activity.",
+image: ""
+},
+54: {
+text: "Chanhudaro is known as the 'city without a citadel'. Its urban layout lacked a citadel structure.",
+image: ""
+},
+55: {
+text: "Lipstick was one of the cosmetic items found at Chanhudaro. Artifacts suggest the presence of beauty products.",
+image: ""
+},
+56: {
+text: "Imprint of a dog's paw was found on a brick at Chanhudaro. Such imprints indicate animal presence in the settlement.",
+image: ""
+},
+57: {
+text: "A bronze toy cart was discovered at Chanhudaro, representing children's play activities and craftsmanship.",
+image: ""
+},
+58: {
+text: "A major dockyard facility was excavated at Lothal. This points to Lothal's role as a prominent port city.",
+image: ""
+},
+59: {
+text: "A Persian/Iranian seal was discovered at Lothal, showing links with foreign cultures.",
+image: ""
+},
+60: {
+text: "Bird and fox figures were painted on jars found at Lothal, demonstrating skilled pottery and artistic diversity.",
+image: ""
+},
+61: {
+text: "A ploughed field surface (pre-Harappan) was found at Kalibangan. It provides evidence of early agricultural practices.",
+image: ""
+},
+62: {
+text: "7 fire altars were found at Kalibangan. Their existence signifies ritual and religious practices.",
+image: ""
+},
+63: {
+text: "Banawali lacked a chess-board or grid pattern town planning. Its layout was more unorganized compared to other Indus cities.",
+image: ""
+},
+64: {
+text: "A large water reservoir was excavated at Dholavira. The site demonstrates advanced water management and storage technology.",
+image: ""
+},
+65: {
+text: "The largest Harappan inscription at Dholavira was used for civic purposes. Such inscriptions denote administrative and public utility.",
+image: ""
+},
+66: {
+text: "Bones of horse were found at Sutkagendor. This find increases knowledge of animal domestication and burial customs.",
+image: ""
+},
+67: {
+text: "At Daimabad, a bronze image depicting a charioteer with chariot, ox, elephant and rhinoceros was discovered. This artifact highlights craftsmanship and symbolic representations in the civilization.",
+image: ""
+},
+68: {
+text: "Mohenjodaro is the largest site of Indus Civilization. Its extensive remains surpass all other sites.",
+image: ""
+},
+69: {
+text: "Rakhigarhi is the largest Indian site of Indus Civilization. It is located in Haryana.",
+image: ""
+},
+70: {
+text: "A common feature of major Indus cities was systematic town-planning on the lines of a grid system. This regular street planning was distinctive.",
+image: ""
+},
+71: {
+text: "Burnt bricks were commonly used in construction in Indus cities. This provided strength and uniformity.",
+image: ""
+},
+72: {
+text: "Dholavira is famous for its giant water reservoirs, demonstrating advanced water management.",
+image: ""
+},
+73: {
+text: "Chanhudaro was exceptional among Indus cities for lacking a fortified citadel.",
+image: ""
+},
+74: {
+text: "Surkotada is located in Kutch district, Gujarat. It stands out due to its archaeological findings.",
+image: ""
+},
+75: {
+text: "Surkotada is the only Indus site where horse remains have actually been found.",
+image: ""
+},
+76: {
+text: "Main crops of Indus people were wheat and barley. These formed their basic agricultural output.",
+image: ""
+},
+77: {
+text: "Evidence of rice cultivation was found only in Lothal and Rangpur among Indus sites.",
+image: ""
+},
+78: {
+text: "Dates were among other crops cultivated by Indus people, along with mustard and sesamum.",
+image: ""
+},
+79: {
+text: "Indus people were the first in the world to produce cotton. Their textiles were notable in ancient history.",
+image: ""
+},
+80: {
+text: "Animals among Indus people included sheep, goat, humped and humpless bull, buffalo, boar, dog, cat, pig, fowl, deer, tortoise, elephant, camel, rhinoceros, tiger etc.",
+image: ""
+},
+81: {
+text: "Lion was not known to Indus people; documentation and remains are absent.",
+image: ""
+},
+82: {
+text: "A single instance of Indian rhinoceros has been reported from Amari.",
+image: ""
+},
+83: {
+text: "Extensive inland and foreign trade is evidenced with Mesopotamia or Sumeria (Modern Iraq).",
+image: ""
+},
+84: {
+text: "Foreign trade with Bahrain flourished alongside Mesopotamia.",
+image: ""
+},
+85: {
+text: "Gold was imported into the Indus Civilization from Kolar (Karnataka), Afghanistan, and Persia (Iran). These regions supplied precious metals.",
+image: ""
+},
+86: {
+text: "Silver was imported into the Indus Civilization from Afghanistan, Persia (Iran), and South India.",
+image: ""
+},
+87: {
+text: "Copper was mainly imported from Khetri region in Rajasthan, which was an important mining source.",
+image: ""
+},
+88: {
+text: "Copper was also imported from Baluchistan, providing additional supply beyond Rajasthan.",
+image: ""
+},
+89: {
+text: "Tin was imported into the Indus Civilization from Afghanistan and Bihar.",
+image: ""
+},
+90: {
+text: "Lapis lazuli and sapphire were imported from Badak-shan region of Afghanistan into the Indus Civilization.",
+image: ""
+},
+91: {
+text: "Jade was imported from Central Asia, adding to the diversity of materials in the civilization.",
+image: ""
+},
+92: {
+text: "Steatite was imported into the Indus Civilization from Shaher-i-Sokhta in Iran and Kirthar Hills in Pakistan.",
+image: ""
+},
+93: {
+text: "Amethyst was chiefly imported from Maharashtra, according to archaeological findings.",
+image: ""
+},
+94: {
+text: "Agate, chalcedonies, and carnelians were imported from Saurashtra and West India.",
+image: ""
+},
+95: {
+text: "Exports of the Indus civilization included agricultural products, cotton goods, terracotta figurines, pottery, beads (from Chanhudaro), conch-shell (from Lothal), ivory products, copper etc.",
+image: ""
+},
+96: {
+text: "Chanhudaro is known for exporting certain beads during the Indus civilization period.",
+image: ""
+},
+97: {
+text: "Lothal was a main center for exporting conch-shell among Indus sites.",
+image: ""
+},
+98: {
+text: "A very interesting feature of the Indus civilization was that iron was not known to the people.",
+image: ""
+},
+99: {
+text: "The Sumerian texts refer to trade relations with 'Meluhā', the name given to the Indus region.",
+image: ""
+},
+100: {
+text: "Shatughai and Mundigqaq were Indus sites discovered in Afghanistan.",
+image: ""
+},
+101: {
+text: "Dilmun (Bahrain) was an intermediate station mentioned in Sumerian texts where Harappan seals were found.",
+image: ""
+},
+102: {
+text: "Susa and Ur were Mesopotamian places where Harappan seals were found.",
+image: ""
+},
+103: {
+text: "Harappans were the earliest people to produce cotton, called 'Sindon' by the Greeks.",
+image: ""
+},
+104: {
+text: "Cotton produced by Harappans was called 'Sindon' by the Greeks.",
+image: ""
+},
+105: {
+text: "There is no evidence of coins in Indus Civilization; barter is assumed to be the normal method of exchange of goods.",
+image: ""
+},
+106: {
+text: "Lothal was an ancient port of the Indus civilization.",
+image: ""
+},
+107: {
+text: "The Indus Civilization was primarily urban in its population and settlements.",
+image: ""
+},
+108: {
+text: "The ruling authority of Indus Civilization was a class of merchants; there is no clear-cut evidence of priests or warriors.",
+image: ""
+},
+109: {
+text: "The Harappan people didn't worship their gods in temples. No temple in fact has been unearthed.",
+image: ""
+},
+110: {
+text: "Mother-Goddess (Matridevi or Shakti) was the most commonly found figurine at Indus sites.",
+image: ""
+},
+111: {
+text: "There is evidence of prevalence of Yoni (female sex organ) worship at Harappan sites.",
+image: ""
+},
+112: {
+text: "The chief male deity among Harappans was Pashupati Mahadeva (Proto-Shiva), lord of animals.",
+image: ""
+},
+113: {
+text: "Proto-Shiva is represented in seals as sitting in yogic posture surrounded by animals.",
+image: ""
+},
+114: {
+text: "Pashupati Mahadeva is depicted in seals surrounded by elephant, tiger, rhino, buffalo, and two deer at his feet.",
+image: ""
+},
+115: {
+text: "Shiva-Shakti worship, the oldest form of worship in India, was prevalent among Harappan people.",
+image: ""
+},
+116: {
+text: "Animal worship and tree worship (especially peepal) were in vogue in those days along with other worship rituals.",
+image: ""
+},
+117: {
+text: "There is evidence of pictographic script found mainly on seals related to the Indus Civilization.",
+image: ""
+},
+118: {
+text: "Potshards from Kalibanga show that writing was boustrophedon or alternately from right to left and left to right.",
+image: ""
+},
+119: {
+text: "The Indus script has been referred to as Proto-Dravidian due to its linguistic features.",
+image: ""
+},
+120: {
+text: "The oldest deciphered script in the Indian subcontinent is Brahmi, known from around 5th century BC.",
+image: ""
+},
+121: {
+text: "Steatite was mainly used for the manufacture of seals by Indus people.",
+image: ""
+},
+122: {
+text: "The humpless bull is represented in most of the Indus valley seals.",
+image: ""
+},
+123: {
+text: "Inhumation or complete burial was the most common method of disposal of the dead in Indus Civilization.",
+image: ""
+},
+124: {
+text: "The origin of the Swastika symbol can be traced to the Indus Civilization.",
+image: ""
+},
+125: {
+text: "Indra is accused of causing the decline of Indus Civilization according to M. Wheeler.",
+image: ""
+},
+126: {
+text: "The Rigveda speaks of a battle at Hariyumpia which is identified with Harappa.",
+image: ""
+},
+127: {
+text: "Most scholars believe the makers of the Indus Civilization were Dravidian.",
+image: ""
+},
+128: {
+text: "Contemporary civilizations of Indus Civilization included Mesopotamia, Egypt and China.",
+image: ""
+}
 
-// Topic Titles
-const topics = [
-  "Indian History", 
-  "World History", 
-  "Geography",
-  "Indian Polity & Constitution", 
-  "Indian Economy",
-  "Physics", 
-  "Chemistry", 
-  "Biology", 
-  "Miscellaneous", 
-  "Computers",
-  "Vocabulary"
-];
-
-// Each topic has an array of objects: { name: "Button Name", url: "..." }
-const links = {
-  0: [
-    { name: "Harappan or Indus Civilization", url: "https://sudhanshu09102000.github.io/01-Harappan-or-Indus-Civilization/" },
-    { name: "Vedic Culture", url: "https://sudhanshu09102000.github.io/02-Vedic-Culture/" },
-    { name: "Mahajanapada Period", url: "https://sudhanshu09102000.github.io/03-Mahajanapada-Period/" },
-    { name: "Religious Movements", url: "https://sudhanshu09102000.github.io/04-Religious-Movements/" },
-    { name: "Maurya Period", url: "https://sudhanshu09102000.github.io/05-Maurya-Period/" },
-    { name: "Post-Maurya or Pre-Gupta Period", url: "https://sudhanshu09102000.github.io/06-Post-Maurya-or-Pre-Gupta-Period/" },
-    { name: "The Sangam Period", url: "https://sudhanshu09102000.github.io/07-Sangam-Period/" },
-    { name: "Gupta Period", url: "https://sudhanshu09102000.github.io/08-Gupta-Period/" },
-    { name: "Post-Gupta Period or Vardhana Dynasty", url: "https://sudhanshu09102000.github.io/09-Post-Gupta-Period-or-Vardhana-Dynasty/" },
-    { name: "Early-Medieval Period", url: "https://sudhanshu09102000.github.io/10-Early-Medieval-Period/" },
-    { name: "North India (Rajputa Period)", url: "https://sudhanshu09102000.github.io/11-North-India-Rajputa-Period/" },
-    { name: "South India (Cholas & Others)", url: "https://sudhanshu09102000.github.io/12-South-India-Cholas-Others/" },
-    { name: "Sultanate Period", url: "https://sudhanshu09102000.github.io/13-Sultanate-Period/" },
-    { name: "The Delhi Sultanate", url: "https://sudhanshu09102000.github.io/14-Delhi-Sultanate/" },
-    { name: "Vijayanagar & Other Kingdoms", url: "https://sudhanshu09102000.github.io/15-Vijayanagar-Other-Kingdoms/" },
-    { name: "Religious Movements: Bhakti Movement", url: "https://sudhanshu09102000.github.io/16-Bhakti-Movement/" },
-    { name: "Religious Movements: Sufi Movement", url: "https://sudhanshu09102000.github.io/17-Sufi-Movement/" },
-    { name: "Mughal Period", url: "https://sudhanshu09102000.github.io/18-Mughal-Period/" },
-    { name: "Maratha State & Maratha Confederacy", url: "https://sudhanshu09102000.github.io/19-Maratha-State-Maratha-Confederacy/" },
-    { name: "The Advent of the Europeans", url: "https://sudhanshu09102000.github.io/20-Advent-of-the-Europeans/" },
-    { name: "Expansion of British Power (context of Bengal, Mysore, Punjab etc)", url: "https://sudhanshu09102000.github.io/21-Expansion-of-British-Power/" },
-    { name: "Economic Impact of British Rule", url: "https://sudhanshu09102000.github.io/22-Economic-Impact-of-British-Rule/" },
-    { name: "Socio-Religious Movements in 19th-20th Centuries", url: "https://sudhanshu09102000.github.io/23-Socio-Religious-Movements-19th-20th-Centuries/" },
-    { name: "Freedom Struggle", url: "https://sudhanshu09102000.github.io/24-Freedom-Struggle/" },
-    { name: "The Revolt of 1857", url: "https://sudhanshu09102000.github.io/25-Revolt-of-1857/" },
-    { name: "Moderate Phase", url: "https://sudhanshu09102000.github.io/26-Moderate-Phase/" },
-    { name: "Extremist Phase", url: "https://sudhanshu09102000.github.io/27-Extremist-Phase/" },
-    { name: "The Gandhian Era", url: "https://sudhanshu09102000.github.io/28-Gandhian-Era/" },
-    { name: "Important Dates", url: "https://sudhanshu09102000.github.io/29-Important-Dates/" },
-    { name: "Places", url: "https://sudhanshu09102000.github.io/30-Places/" },
-    { name: "Foreign Travellers or Envoys", url: "https://sudhanshu09102000.github.io/31-Foreign-Travellers-or-Envoys/" },
-    { name: "Abbreviated or Alternative Names", url: "https://sudhanshu09102000.github.io/32-Abbreviated-Alternative-Names/" },
-    { name: "Sayings", url: "https://sudhanshu09102000.github.io/33-Sayings/" },
-    { name: "Battles", url: "https://sudhanshu09102000.github.io/34-Battles/" },
-    { name: "Reforms or Acts", url: "https://sudhanshu09102000.github.io/35-Reforms-or-Acts/" },
-    { name: "Committees or Commissions", url: "https://sudhanshu09102000.github.io/36-Committees-or-Commissions/" },
-    { name: "Congress Session", url: "https://sudhanshu09102000.github.io/37-Congress-Session/" },
-    { name: "Governor-Generals & Viceroys", url: "https://sudhanshu09102000.github.io/38-Governor-Generals-Viceroys/" }
-
-  ],
-  1: [
-    { name: "Mesopotamian Civilization", url: "https://sudhanshu09102000.github.io/Mesopotamian-Civilization/" },
-    { name: "Egyptian Civilization", url: "https://sudhanshu09102000.github.io/Egyptian-Civilization/" },
-    { name: "Harappan Civilization", url: "https://sudhanshu09102000.github.io/Harappan-Civilization/" },
-    { name: "Chinese Civilization", url: "https://sudhanshu09102000.github.io/Chinese-Civilization/" },
-    { name: "Iranian Civilization", url: "https://sudhanshu09102000.github.io/Iranian-Civilization/" },
-    { name: "Greek Civilization", url: "https://sudhanshu09102000.github.io/Greek-Civilization/" },
-    { name: "Roman Civilization", url: "https://sudhanshu09102000.github.io/Roman-Civilization/" },
-    { name: "Seven Wonders of Ancient World", url: "https://sudhanshu09102000.github.io/Seven-Wonders-Ancient-World/" },
-    { name: "Medieval Europe (Feudalism, Crusades)", url: "https://sudhanshu09102000.github.io/Medieval-Europe-Feudalism-Crusades/" },
-    { name: "Arab Civilization", url: "https://sudhanshu09102000.github.io/Arab-Civilization/" },
-    { name: "Medieval China", url: "https://sudhanshu09102000.github.io/Medieval-China/" },
-    { name: "Medieval Japan", url: "https://sudhanshu09102000.github.io/Medieval-Japan/" },
-    { name: "Seven Wonders of Medieval World", url: "https://sudhanshu09102000.github.io/Seven-Wonders-Medieval-World/" },
-    { name: "Renaissance", url: "https://sudhanshu09102000.github.io/Renaissance/" },
-    { name: "Reformation", url: "https://sudhanshu09102000.github.io/Reformation/" },
-    { name: "Geographical Discoveries", url: "https://sudhanshu09102000.github.io/Geographical-Discoveries/" },
-    { name: "Glorious Revolution", url: "https://sudhanshu09102000.github.io/Glorious-Revolution/" },
-    { name: "Industrial Revolution", url: "https://sudhanshu09102000.github.io/Industrial-Revolution/" },
-    { name: "American Revolution", url: "https://sudhanshu09102000.github.io/American-Revolution/" },
-    { name: "French Revolution", url: "https://sudhanshu09102000.github.io/French-Revolution/" },
-    { name: "Unification of Italy", url: "https://sudhanshu09102000.github.io/Unification-of-Italy/" },
-    { name: "Unification of Germany", url: "https://sudhanshu09102000.github.io/Unification-of-Germany/" },
-    { name: "First World War", url: "https://sudhanshu09102000.github.io/First-World-War/" },
-    { name: "Russian Revolution", url: "https://sudhanshu09102000.github.io/Russian-Revolution/" },
-    { name: "Chinese Revolution", url: "https://sudhanshu09102000.github.io/Chinese-Revolution/" },
-    { name: "Turkish Revolution", url: "https://sudhanshu09102000.github.io/Turkish-Revolution/" },
-    { name: "World Depression of 1929-34", url: "https://sudhanshu09102000.github.io/World-Depression-1929-34/" },
-    { name: "Fascism in Italy", url: "https://sudhanshu09102000.github.io/Fascism-in-Italy/" },
-    { name: "Nazism in Germany", url: "https://sudhanshu09102000.github.io/Nazism-in-Germany/" },
-    { name: "Militarism in Japan", url: "https://sudhanshu09102000.github.io/Militarism-in-Japan/" },
-    { name: "Second World War", url: "https://sudhanshu09102000.github.io/Second-World-War/" },
-    { name: "Important Dates", url: "https://sudhanshu09102000.github.io/Important-Dates-World/" },
-    { name: "Association of places", url: "https://sudhanshu09102000.github.io/Association-of-Places/" },
-    { name: "Abbreviated or Alternative Names", url: "https://sudhanshu09102000.github.io/Abbreviated-Alternative-Names-World/" },
-    { name: "Important Battles", url: "https://sudhanshu09102000.github.io/Important-Battles-World/" }
-
-  ],
-  2: [
-    { name: "The Solar System", url: "https://sudhanshu09102000.github.io/Solar-System/" },
-    { name: "Continents and Oceans", url: "https://sudhanshu09102000.github.io/Continents-Oceans/" },
-    { name: "Biosphere", url: "https://sudhanshu09102000.github.io/Biosphere/" },
-    { name: "Lithosphere", url: "https://sudhanshu09102000.github.io/Lithosphere/" },
-    { name: "Hydrosphere", url: "https://sudhanshu09102000.github.io/Hydrosphere/" },
-    { name: "Atmosphere", url: "https://sudhanshu09102000.github.io/Atmosphere/" },
-    { name: "Latitudes and Longitudes", url: "https://sudhanshu09102000.github.io/Latitudes-Longitudes/" },
-    { name: "Different heat zones of the earth", url: "https://sudhanshu09102000.github.io/Heat-Zones-Earth/" },
-    { name: "Longitudes and time zones", url: "https://sudhanshu09102000.github.io/Time-Zones/" },
-    { name: "International Date Line", url: "https://sudhanshu09102000.github.io/International-Date-Line/" },
-    { name: "Motion of the earth", url: "https://sudhanshu09102000.github.io/Motion-of-Earth/" },
-    { name: "Effect of the tilted axis on day and night", url: "https://sudhanshu09102000.github.io/Tilted-Axis-Day-Night/" },
-    { name: "Atmosphere (composition and layer of the Atmosphere)", url: "https://sudhanshu09102000.github.io/Atmosphere-Composition-Layers/" },
-    { name: "Weather and Climate", url: "https://sudhanshu09102000.github.io/Weather-Climate/" },
-    { name: "Atmospheric Pressure", url: "https://sudhanshu09102000.github.io/Atmospheric-Pressure/" },
-    { name: "Internal Structure of the earth", url: "https://sudhanshu09102000.github.io/Internal-Structure-Earth/" },
-    { name: "Rocks, Earthquakes and Volcanoes", url: "https://sudhanshu09102000.github.io/Rocks-Earthquakes-Volcanoes/" },
-    { name: "Various Landforms (Mountains, Plateaus, Plains, Grasslands)", url: "https://sudhanshu09102000.github.io/Landforms-Mountains-Plateaus-Plains-Grasslands/" },
-    { name: "Landforms created by the river system", url: "https://sudhanshu09102000.github.io/Landforms-River-System/" },
-    { name: "Landforms created by glacier", url: "https://sudhanshu09102000.github.io/Landforms-Glacier/" },
-    { name: "Landforms created by the action of wind", url: "https://sudhanshu09102000.github.io/Landforms-Wind/" },
-    { name: "Landforms created by the actions of Groundwater", url: "https://sudhanshu09102000.github.io/Landforms-Groundwater/" },
-    { name: "The Indian Subcontinent; Position, extent and physical features", url: "https://sudhanshu09102000.github.io/Indian-Subcontinent-Physical-Features/" },
-    { name: "Climatic diversity in the Indian Sub-continent", url: "https://sudhanshu09102000.github.io/Climatic-Diversity-India/" },
-    { name: "Soil resources of the Indian sub-continent", url: "https://sudhanshu09102000.github.io/Soil-Resources-India/" },
-    { name: "Agriculture in India", url: "https://sudhanshu09102000.github.io/Agriculture-India/" },
-    { name: "Land use pattern of India", url: "https://sudhanshu09102000.github.io/Land-Use-Pattern-India/" },
-    { name: "Water resources and their utilization in India", url: "https://sudhanshu09102000.github.io/Water-Resources-Utilization-India/" },
-    { name: "Multipurpose river valley projects", url: "https://sudhanshu09102000.github.io/Multipurpose-River-Valley-Projects/" },
-    { name: "Transport in India", url: "https://sudhanshu09102000.github.io/Transport-India/" },
-    { name: "States and their capitals", url: "https://sudhanshu09102000.github.io/States-Capitals/" },
-    { name: "Population of India and states", url: "https://sudhanshu09102000.github.io/Population-India-States/" },
-    { name: "Wildlife sanctuaries and national parks in India", url: "https://sudhanshu09102000.github.io/Wildlife-Sanctuaries-National-Parks-India/" },
-    { name: "Important Irrigation and power projects", url: "https://sudhanshu09102000.github.io/Irrigation-Power-Projects/" },
-    { name: "Indian satellites (at a glance)", url: "https://sudhanshu09102000.github.io/Indian-Satellites/" },
-    { name: "General introduction to Asia", url: "https://sudhanshu09102000.github.io/Introduction-Asia/" },
-    { name: "Geography of the Indian subcontinent", url: "https://sudhanshu09102000.github.io/Geography-Indian-Subcontinent/" },
-    { name: "Countries with their capitals and currency", url: "https://sudhanshu09102000.github.io/Countries-Capitals-Currency/" },
-    { name: "River side cities", url: "https://sudhanshu09102000.github.io/River-Side-Cities/" },
-    { name: "Wonders of the world", url: "https://sudhanshu09102000.github.io/Wonders-of-the-World/" },
-    { name: "Countries and their main produces and industries", url: "https://sudhanshu09102000.github.io/Countries-Produces-Industries/" },
-    { name: "Towns associated with some important industries", url: "https://sudhanshu09102000.github.io/Towns-Industries/" },
-    { name: "Famous sites (India)", url: "https://sudhanshu09102000.github.io/Famous-Sites-India/" },
-    { name: "Famous Sites (World)", url: "https://sudhanshu09102000.github.io/Famous-Sites-World/" },
-    { name: "Changed names", url: "https://sudhanshu09102000.github.io/Changed-Names/" },
-    { name: "Continents earth area", url: "https://sudhanshu09102000.github.io/Continents-Earth-Area/" },
-    { name: "Continents highest and lowest points", url: "https://sudhanshu09102000.github.io/Continents-Highest-Lowest-Points/" },
-    { name: "Three deepest oceans", url: "https://sudhanshu09102000.github.io/Three-Deepest-Oceans/" },
-    { name: "Highest mountain peaks (world)", url: "https://sudhanshu09102000.github.io/Highest-Mountain-Peaks-World/" },
-    { name: "Geographical epithets", url: "https://sudhanshu09102000.github.io/Geographical-Epithets/" },
-    { name: "Important boundary lines", url: "https://sudhanshu09102000.github.io/Important-Boundary-Lines/" },
-    { name: "Tribes and their homelands", url: "https://sudhanshu09102000.github.io/Tribes-Homelands/" },
-    { name: "Glossary", url: "https://sudhanshu09102000.github.io/Glossary/" }
 
 
-  ],
-  3: [
-    { name: "Evolution of Indian Constitution", url: "https://sudhanshu09102000.github.io/Evolution-Indian-Constitution/" },
-    { name: "Constituent Assembly and Making of the Constitution", url: "https://sudhanshu09102000.github.io/Constituent-Assembly-Making-Constitution/" },
-    { name: "Different Sources of the Indian Constitution", url: "https://sudhanshu09102000.github.io/Sources-Indian-Constitution/" },
-    { name: "Important Articles of the Constitution", url: "https://sudhanshu09102000.github.io/Articles-Constitution/" },
-    { name: "Important Amendments of the Constitution", url: "https://sudhanshu09102000.github.io/Amendments-Constitution/" },
-    { name: "Some Special features of the Indian Constitution", url: "https://sudhanshu09102000.github.io/Special-Features-Indian-Constitution/" },
-    { name: "Federal and Unitary features of the Indian Union", url: "https://sudhanshu09102000.github.io/Federal-Unitary-Features-Indian-Union/" },
-    { name: "The preamble", url: "https://sudhanshu09102000.github.io/Preamble/" },
-    { name: "Lapse of Paramountcy", url: "https://sudhanshu09102000.github.io/Lapse-of-Paramountcy/" },
-    { name: "Integration and Merger of Indian States", url: "https://sudhanshu09102000.github.io/Integration-Merger-Indian-States/" },
-    { name: "The Union and its Territories", url: "https://sudhanshu09102000.github.io/Union-Territories/" },
-    { name: "Reorganization of States", url: "https://sudhanshu09102000.github.io/Reorganization-of-States/" },
-    { name: "Citizenship", url: "https://sudhanshu09102000.github.io/Citizenship/" },
-    { name: "Fundamental Rights", url: "https://sudhanshu09102000.github.io/Fundamental-Rights/" },
-    { name: "Directive Principles of State Policy", url: "https://sudhanshu09102000.github.io/Directive-Principles-State-Policy/" },
-    { name: "Fundamental Duties", url: "https://sudhanshu09102000.github.io/Fundamental-Duties/" },
-    { name: "Procedure of Amending the Constitution", url: "https://sudhanshu09102000.github.io/Procedure-Amending-Constitution/" },
-    { name: "Executive of the Union", url: "https://sudhanshu09102000.github.io/Executive-Union/" },
-    { name: "The Parliament of India", url: "https://sudhanshu09102000.github.io/Parliament-India/" },
-    { name: "Executive of the States", url: "https://sudhanshu09102000.github.io/Executive-States/" },
-    { name: "Special Position of J & K", url: "https://sudhanshu09102000.github.io/Special-Position-JK/" },
-    { name: "Panchayats", url: "https://sudhanshu09102000.github.io/Panchayats/" },
-    { name: "Municipalities", url: "https://sudhanshu09102000.github.io/Municipalities/" },
-    { name: "The Supreme Court", url: "https://sudhanshu09102000.github.io/Supreme-Court/" },
-    { name: "The High Court", url: "https://sudhanshu09102000.github.io/High-Court/" },
-    { name: "Inter-State Council", url: "https://sudhanshu09102000.github.io/Inter-State-Council/" },
-    { name: "Finance Commission", url: "https://sudhanshu09102000.github.io/Finance-Commission/" },
-    { name: "Planning Commission", url: "https://sudhanshu09102000.github.io/Planning-Commission/" },
-    { name: "National Development Council", url: "https://sudhanshu09102000.github.io/National-Development-Council/" },
-    { name: "National Integration Council", url: "https://sudhanshu09102000.github.io/National-Integration-Council/" },
-    { name: "Inter-State Relations", url: "https://sudhanshu09102000.github.io/Inter-State-Relations/" },
-    { name: "Emergency Provisions", url: "https://sudhanshu09102000.github.io/Emergency-Provisions/" },
-    { name: "Public Service Commissions", url: "https://sudhanshu09102000.github.io/Public-Service-Commissions/" },
-    { name: "Election", url: "https://sudhanshu09102000.github.io/Election/" },
-    { name: "Delimitation Commission of India", url: "https://sudhanshu09102000.github.io/Delimitation-Commission-India/" },
-    { name: "The Official Languages", url: "https://sudhanshu09102000.github.io/Official-Languages/" },
-    { name: "National Symbols", url: "https://sudhanshu09102000.github.io/National-Symbols/" },
-    { name: "Glossary of Constitutional Terms", url: "https://sudhanshu09102000.github.io/Glossary-Constitutional-Terms/" }
-  ],
-  4: [
-    { name: "Highlights of Indian Economy", url: "https://sudhanshu09102000.github.io/Highlights-Indian-Economy/" },
-    { name: "Economy and Economics", url: "https://sudhanshu09102000.github.io/Economy-and-Economics/" },
-    { name: "Characteristics of Indian Economy", url: "https://sudhanshu09102000.github.io/Characteristics-Indian-Economy/" },
-    { name: "Agriculture & Land Development", url: "https://sudhanshu09102000.github.io/Agriculture-Land-Development/" },
-    { name: "National Income", url: "https://sudhanshu09102000.github.io/National-Income/" },
-    { name: "Planning", url: "https://sudhanshu09102000.github.io/Planning/" },
-    { name: "Unemployment", url: "https://sudhanshu09102000.github.io/Unemployment/" },
-    { name: "Trade & Commerce", url: "https://sudhanshu09102000.github.io/Trade-Commerce/" },
-    { name: "New Economic Policy", url: "https://sudhanshu09102000.github.io/New-Economic-Policy/" },
-    { name: "Indian Financial System", url: "https://sudhanshu09102000.github.io/Indian-Financial-System/" },
-    { name: "Indian Fiscal System", url: "https://sudhanshu09102000.github.io/Indian-Fiscal-System/" },
-    { name: "Banking in India", url: "https://sudhanshu09102000.github.io/Banking-in-India/" },
-    { name: "Tax System", url: "https://sudhanshu09102000.github.io/Tax-System/" },
-    { name: "Industry", url: "https://sudhanshu09102000.github.io/Industry/" },
-    { name: "Foreign Trade", url: "https://sudhanshu09102000.github.io/Foreign-Trade/" },
-    { name: "Miscellaneous Facts", url: "https://sudhanshu09102000.github.io/Miscellaneous-Facts/" },
-    { name: "Glossary of Economic and Financial Terms", url: "https://sudhanshu09102000.github.io/Glossary-Economic-Financial-Terms/" },
-    { name: "Some Noteworthy Facts", url: "https://sudhanshu09102000.github.io/Some-Noteworthy-Facts/" },
-    { name: "Appendix-1: Highlights of Economic Survey 2014-15", url: "https://sudhanshu09102000.github.io/Appendix-1-Economic-Survey-2014-15/" },
-    { name: "Appendix-2: Socio Economic and Caste Census 2011", url: "https://sudhanshu09102000.github.io/Appendix-2-Socio-Economic-Caste-Census-2011/" }
-  ],
-  5: [
-    { name: "Unit", url: "https://sudhanshu09102000.github.io/Physics-Unit/" },
-    { name: "Motion", url: "https://sudhanshu09102000.github.io/Physics-Motion/" },
-    { name: "Work, Energy and Power", url: "https://sudhanshu09102000.github.io/Work-Energy-Power/" },
-    { name: "Gravitation", url: "https://sudhanshu09102000.github.io/Gravitation/" },
-    { name: "Pressure", url: "https://sudhanshu09102000.github.io/Pressure/" },
-    { name: "Floatation", url: "https://sudhanshu09102000.github.io/Floatation/" },
-    { name: "Surface Tension", url: "https://sudhanshu09102000.github.io/Surface-Tension/" },
-    { name: "Viscosity", url: "https://sudhanshu09102000.github.io/Viscosity/" },
-    { name: "Elasticity", url: "https://sudhanshu09102000.github.io/Elasticity/" },
-    { name: "Simple Harmonic Motion", url: "https://sudhanshu09102000.github.io/Simple-Harmonic-Motion/" },
-    { name: "Wave", url: "https://sudhanshu09102000.github.io/Wave/" },
-    { name: "Sound Wave", url: "https://sudhanshu09102000.github.io/Sound-Wave/" },
-    { name: "Heat", url: "https://sudhanshu09102000.github.io/Heat/" },
-    { name: "Light", url: "https://sudhanshu09102000.github.io/Light/" },
-    { name: "Static Electricity", url: "https://sudhanshu09102000.github.io/Static-Electricity/" },
-    { name: "Current Electricity", url: "https://sudhanshu09102000.github.io/Current-Electricity/" },
-    { name: "Magnetism", url: "https://sudhanshu09102000.github.io/Magnetism/" },
-    { name: "Atomic & Nuclear Physics", url: "https://sudhanshu09102000.github.io/Atomic-Nuclear-Physics/" },
-    { name: "Electronics", url: "https://sudhanshu09102000.github.io/Electronics/" },
-    { name: "Scientific Instruments", url: "https://sudhanshu09102000.github.io/Scientific-Instruments/" },
-    { name: "Inventions", url: "https://sudhanshu09102000.github.io/Inventions/" },
-    { name: "Important Discoveries Relating to Physics", url: "https://sudhanshu09102000.github.io/Important-Discoveries-Physics/" },
-    { name: "Various Units of Measurement-Weight", url: "https://sudhanshu09102000.github.io/Units-Measurement-Weight/" },
-    { name: "Conversion of Units from one System to another System", url: "https://sudhanshu09102000.github.io/Conversion-Units-System/" }
-
-
-  ],
-  6: [
-    { name: "Substance & its nature", url: "https://sudhanshu09102000.github.io/Substance-Nature/" },
-    { name: "Atomic Structure", url: "https://sudhanshu09102000.github.io/Atomic-Structure/" },
-    { name: "Periodic Classification of Elements", url: "https://sudhanshu09102000.github.io/Periodic-Classification-Elements/" },
-    { name: "Chemical Bonding", url: "https://sudhanshu09102000.github.io/Chemical-Bonding/" },
-    { name: "Oxidation & Reduction", url: "https://sudhanshu09102000.github.io/Oxidation-Reduction/" },
-    { name: "Acids, Bases & Salts", url: "https://sudhanshu09102000.github.io/Acids-Bases-Salts/" },
-    { name: "Behaviour of Gases", url: "https://sudhanshu09102000.github.io/Behaviour-Gases/" },
-    { name: "Electrolysis", url: "https://sudhanshu09102000.github.io/Electrolysis/" },
-    { name: "Carbon & its Compounds", url: "https://sudhanshu09102000.github.io/Carbon-Compounds/" },
-    { name: "Fuels", url: "https://sudhanshu09102000.github.io/Fuels/" },
-    { name: "Metallurgy", url: "https://sudhanshu09102000.github.io/Metallurgy/" },
-    { name: "Important Facts About Some Metals", url: "https://sudhanshu09102000.github.io/Important-Facts-Metals/" },
-    { name: "Non-Metals", url: "https://sudhanshu09102000.github.io/Non-Metals/" },
-    { name: "Common Facts", url: "https://sudhanshu09102000.github.io/Common-Facts-Chemistry/" }
-  ],
-  7: [
-    { name: "Introduction", url: "https://sudhanshu09102000.github.io/Biology-Introduction/" },
-    { name: "Classification of Organism", url: "https://sudhanshu09102000.github.io/Classification-Organism/" },
-    { name: "Cytology", url: "https://sudhanshu09102000.github.io/Cytology/" },
-    { name: "Genetics", url: "https://sudhanshu09102000.github.io/Genetics/" },
-    { name: "Organic Evolution", url: "https://sudhanshu09102000.github.io/Organic-Evolution/" },
-    { name: "Botany: Classification of Plant Kingdom", url: "https://sudhanshu09102000.github.io/Classification-Plant-Kingdom/" },
-    { name: "Botany: Plant Morphology", url: "https://sudhanshu09102000.github.io/Plant-Morphology/" },
-    { name: "Botany: Plant Tissue", url: "https://sudhanshu09102000.github.io/Plant-Tissue/" },
-    { name: "Botany: Photo-synthesis", url: "https://sudhanshu09102000.github.io/Photo-synthesis/" },
-    { name: "Botany: Plant Hormones", url: "https://sudhanshu09102000.github.io/Plant-Hormones/" },
-    { name: "Botany: Plant Diseases", url: "https://sudhanshu09102000.github.io/Plant-Diseases/" },
-    { name: "Ecology", url: "https://sudhanshu09102000.github.io/Ecology/" },
-    { name: "Pollution", url: "https://sudhanshu09102000.github.io/Pollution/" },
-    { name: "Zoology: Classification of Animal Kingdom", url: "https://sudhanshu09102000.github.io/Classification-Animal-Kingdom/" },
-    { name: "Zoology: Animal Tissue", url: "https://sudhanshu09102000.github.io/Animal-Tissue/" },
-    { name: "Human Blood", url: "https://sudhanshu09102000.github.io/Human-Blood/" },
-    { name: "System of Human Body", url: "https://sudhanshu09102000.github.io/System-Human-Body/" },
-    { name: "Nutrients", url: "https://sudhanshu09102000.github.io/Nutrients/" },
-    { name: "Human Diseases", url: "https://sudhanshu09102000.github.io/Human-Diseases/" },
-    { name: "Miscellaneous", url: "https://sudhanshu09102000.github.io/Biology-Miscellaneous/" }
-
-
-  ],
-  8: [
-    { name: "Firsts in India (Male)", url: "https://sudhanshu09102000.github.io/Firsts-India-Male/" },
-    { name: "Firsts in India (Female)", url: "https://sudhanshu09102000.github.io/Firsts-India-Female/" },
-    { name: "Firsts in World (Male & Female)", url: "https://sudhanshu09102000.github.io/Firsts-World-Male-Female/" },
-    { name: "Superlatives- India", url: "https://sudhanshu09102000.github.io/Superlatives-India/" },
-    { name: "Superlatives- World", url: "https://sudhanshu09102000.github.io/Superlatives-World/" },
-    { name: "Important Monuments", url: "https://sudhanshu09102000.github.io/Important-Monuments/" },
-    { name: "International Boundaries", url: "https://sudhanshu09102000.github.io/International-Boundaries/" },
-    { name: "National Emblems", url: "https://sudhanshu09102000.github.io/National-Emblems/" },
-    { name: "National Animals", url: "https://sudhanshu09102000.github.io/National-Animals/" },
-    { name: "News Agencies", url: "https://sudhanshu09102000.github.io/News-Agencies/" },
-    { name: "Map Lines", url: "https://sudhanshu09102000.github.io/Map-Lines/" },
-    { name: "Political Parties", url: "https://sudhanshu09102000.github.io/Political-Parties/" },
-    { name: "Intelligence Agencies", url: "https://sudhanshu09102000.github.io/Intelligence-Agencies/" },
-    { name: "Parliaments", url: "https://sudhanshu09102000.github.io/Parliaments/" },
-    { name: "Important Signs or Symbols", url: "https://sudhanshu09102000.github.io/Important-Signs-or-Symbols/" },
-    { name: "Official Books", url: "https://sudhanshu09102000.github.io/Official-Books/" },
-    { name: "Newspapers", url: "https://sudhanshu09102000.github.io/Newspapers/" },
-    { name: "UNO", url: "https://sudhanshu09102000.github.io/UNO/" },
-    { name: "World Organisations", url: "https://sudhanshu09102000.github.io/World-Organisations/" },
-    { name: "UN Secretary Generals", url: "https://sudhanshu09102000.github.io/UN-Secretary-Generals/" },
-    { name: "International Decades", url: "https://sudhanshu09102000.github.io/International-Decades/" },
-    { name: "International Years", url: "https://sudhanshu09102000.github.io/International-Years/" },
-    { name: "SAARC Years", url: "https://sudhanshu09102000.github.io/SAARC-Years/" },
-    { name: "International Weeks", url: "https://sudhanshu09102000.github.io/International-Weeks/" },
-    { name: "Important Days (India & World)", url: "https://sudhanshu09102000.github.io/Important-Days-India-World/" },
-    { name: "India's World Heritage Sites", url: "https://sudhanshu09102000.github.io/World-Heritage-Sites-India/" },
-    { name: "Famous Tourist Spots of India", url: "https://sudhanshu09102000.github.io/Tourist-Spots-India/" },
-    { name: "Defence of India", url: "https://sudhanshu09102000.github.io/Defence-of-India/" },
-    { name: "Internal Security of India", url: "https://sudhanshu09102000.github.io/Internal-Security-India/" },
-    { name: "Defence Training Institutions", url: "https://sudhanshu09102000.github.io/Defence-Training-Institutions/" },
-    { name: "Foundation Day of Some States", url: "https://sudhanshu09102000.github.io/Foundation-Day-States/" },
-    { name: "Research Centres of India", url: "https://sudhanshu09102000.github.io/Research-Centres-India/" },
-    { name: "Nuclear & Space Research Centres in India", url: "https://sudhanshu09102000.github.io/Nuclear-Space-Research-India/" },
-    { name: "Health & Medicinal Research Centres in India", url: "https://sudhanshu09102000.github.io/Health-Medicinal-Research-India/" },
-    { name: "Defence Institutes in India", url: "https://sudhanshu09102000.github.io/Defence-Institutes-India/" },
-    { name: "Government Industrial Undertakings", url: "https://sudhanshu09102000.github.io/Government-Industrial-Undertakings/" },
-    { name: "Musical Instruments & their Exponents", url: "https://sudhanshu09102000.github.io/Musical-Instruments-Exponents/" },
-    { name: "States & their Folk Dances", url: "https://sudhanshu09102000.github.io/States-Folk-Dances/" },
-    { name: "Famous Places associated with Eminent Persons", url: "https://sudhanshu09102000.github.io/Famous-Places-Eminent-Persons/" },
-    { name: "Crematorium of Famous Persons", url: "https://sudhanshu09102000.github.io/Crematorium-Famous-Persons/" },
-    { name: "Nicknames", url: "https://sudhanshu09102000.github.io/Nicknames/" },
-    { name: "Great Works associated with Famous Persons", url: "https://sudhanshu09102000.github.io/Great-Works-Famous-Persons/" },
-    { name: "Awards & Honours", url: "https://sudhanshu09102000.github.io/Awards-Honours/" },
-    { name: "National or Padma Awards", url: "https://sudhanshu09102000.github.io/National-or-Padma-Awards/" },
-    { name: "Gallantry Awards", url: "https://sudhanshu09102000.github.io/Gallantry-Awards/" },
-    { name: "Jnanpith Awards", url: "https://sudhanshu09102000.github.io/Jnanpith-Awards/" },
-    { name: "Dada Saheb Phalke Awards", url: "https://sudhanshu09102000.github.io/Dada-Saheb-Phalke-Awards/" },
-    { name: "Books & Authors", url: "https://sudhanshu09102000.github.io/Books-Authors/" },
-    { name: "Games & Sports- Olympic Games, Commonwealth Games, Asian Games, SAF Games, Afro-Asian Games, Sports & Related Informations", url: "https://sudhanshu09102000.github.io/Games-Sports/" },
-    { name: "Cricket & World Cups", url: "https://sudhanshu09102000.github.io/Cricket-World-Cups/" },
-    { name: "Football, Hockey, Tennis", url: "https://sudhanshu09102000.github.io/Football-Hockey-Tennis/" },
-    { name: "Cups & Trophies", url: "https://sudhanshu09102000.github.io/Cups-Trophies/" },
-    { name: "Famous Stadiums", url: "https://sudhanshu09102000.github.io/Famous-Stadiums/" },
-    { name: "National Games & Sports", url: "https://sudhanshu09102000.github.io/National-Games-Sports/" },
-    { name: "Court or Campus or Field", url: "https://sudhanshu09102000.github.io/Court-or-Campus-or-Field/" },
-    { name: "No. of Players in popular Games & Sports", url: "https://sudhanshu09102000.github.io/Players-Games-Sports/" },
-    { name: "National Parks", url: "https://sudhanshu09102000.github.io/National-Parks/" }
-
-
-  ],
-  9: [
-    { name: "Introduction of Computer", url: "https://sudhanshu09102000.github.io/Introduction-Computer/" },
-    { name: "History of Computer", url: "https://sudhanshu09102000.github.io/History-Computer/" },
-    { name: "Generation of Computer", url: "https://sudhanshu09102000.github.io/Generation-Computer/" },
-    { name: "Computer Hardware and Software", url: "https://sudhanshu09102000.github.io/Hardware-Software/" },
-    { name: "Computer Memory", url: "https://sudhanshu09102000.github.io/Computer-Memory/" },
-    { name: "Memory unit", url: "https://sudhanshu09102000.github.io/Memory-Unit/" },
-    { name: "Types of Computer", url: "https://sudhanshu09102000.github.io/Types-Computer/" },
-    { name: "Input and Output device", url: "https://sudhanshu09102000.github.io/Input-Output-Device/" },
-    { name: "Computer architecture and Components", url: "https://sudhanshu09102000.github.io/Architecture-Components/" },
-    { name: "Types of Operating system and its functions", url: "https://sudhanshu09102000.github.io/Operating-System-Types-Functions/" },
-    { name: "Logic gates and Boolean operations", url: "https://sudhanshu09102000.github.io/Logic-Gates-Boolean-Operations/" },
-    { name: "Basics of Combinatorial Components", url: "https://sudhanshu09102000.github.io/Combinatorial-Components/" },
-    { name: "Number System", url: "https://sudhanshu09102000.github.io/Number-System/" },
-    { name: "Programming Languages", url: "https://sudhanshu09102000.github.io/Programming-Languages/" },
-    { name: "Database management system", url: "https://sudhanshu09102000.github.io/Database-Management-System/" },
-    { name: "Computer Network and its types", url: "https://sudhanshu09102000.github.io/Computer-Network-Types/" },
-    { name: "Computer Network Topology", url: "https://sudhanshu09102000.github.io/Network-Topology/" },
-    { name: "Transmission modes", url: "https://sudhanshu09102000.github.io/Transmission-Modes/" },
-    { name: "OSI Model", url: "https://sudhanshu09102000.github.io/OSI-Model/" },
-    { name: "Computer security", url: "https://sudhanshu09102000.github.io/Computer-Security/" },
-    { name: "Fathers and Inventors of Computer Field", url: "https://sudhanshu09102000.github.io/Fathers-Inventors-Computer/" },
-    { name: "Shortcut keys", url: "https://sudhanshu09102000.github.io/Shortcut-Keys/" },
-    { name: "Definitions and terminologies", url: "https://sudhanshu09102000.github.io/Definitions-Terminologies/" },
-    { name: "Extension", url: "https://sudhanshu09102000.github.io/Extension/" },
-    { name: "Abbreviations", url: "https://sudhanshu09102000.github.io/Abbreviations/" }
-
-
-  ],
-  10: [
-    { name: "1. Set1 Vocab Words", url: "https://sudhanshu09102000.github.io/1.-Set1-Vocab-Words/" },
-    { name: "2. Set2 Vocab Words", url: "https://sudhanshu09102000.github.io/2.-Set2-Vocab-Words/" },
-    { name: "3. Set3 Vocab Words", url: "https://sudhanshu09102000.github.io/3.-Set3-Vocab-Words/" },
-    { name: "4. Set4 Vocab Words", url: "https://sudhanshu09102000.github.io/4.-Set4-Vocab-Words/" },
-    { name: "5. Set5 Vocab Words", url: "https://sudhanshu09102000.github.io/5.-Set5-Vocab-Words/" },
-    { name: "6. Set6 Vocab Words", url: "https://sudhanshu09102000.github.io/6.-Set6-Vocab-Words/" },
-    { name: "7. Set7 Vocab Words", url: "https://sudhanshu09102000.github.io/7.-Set7-Vocab-Words/" },
-    { name: "8. Set8 Vocab Words", url: "https://sudhanshu09102000.github.io/8.-Set8-Vocab-Words/" },
-    { name: "9. Set9 Vocab Words", url: "https://sudhanshu09102000.github.io/9.-Set9-Vocab-Words/" },
-    { name: "10. Set10 Vocab Words", url: "https://sudhanshu09102000.github.io/10.-Set10-Vocab-Words/" },
-    { name: "11. Set11 Vocab Words", url: "https://sudhanshu09102000.github.io/11.-Set11-Vocab-Words/" },
-    { name: "12. Set12 Vocab Words", url: "https://sudhanshu09102000.github.io/12.-Set12-Vocab-Words/" },
-    { name: "13. Set13 Vocab Words", url: "https://sudhanshu09102000.github.io/13.-Set13-Vocab-Words/" },
-  ]
 
 };
-
-const mainPage = document.getElementById('mainPage');
-const subPage = document.getElementById('subPage');
-const topicName = document.getElementById('topicName');
-const subButtons = document.getElementById('subButtons');
-
-// Open subpage with fade animation
-function openSubPage(index) {
-  mainPage.style.animation = "fadeOut 0.5s forwards";
-  setTimeout(() => {
-    mainPage.classList.add('hidden');
-    subPage.classList.remove('hidden');
-    subPage.style.animation = "fadeIn 0.5s forwards";
-  }, 400);
-
-  topicName.textContent = topics[index];
-  subButtons.innerHTML = '';
-
-  links[index].forEach(item => {
-    const btn = document.createElement('button');
-    btn.className = 'btn-glass';
-    btn.textContent = item.name;
-    btn.onclick = () => window.open(item.url, "_blank");
-    subButtons.appendChild(btn);
-  });
-}
-
-// Back to main page
-function goBack() {
-  subPage.style.animation = "fadeOut 0.5s forwards";
-  setTimeout(() => {
-    subPage.classList.add('hidden');
-    mainPage.classList.remove('hidden');
-    mainPage.style.animation = "fadeIn 0.5s forwards";
-  }, 400);
-}
-
-// Simple floating particles animation
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = Array.from({length: 50}, () => ({
-  x: Math.random() * canvas.width,
-  y: Math.random() * canvas.height,
-  r: Math.random() * 2,
-  dx: (Math.random() - 0.5) * 0.5,
-  dy: (Math.random() - 0.5) * 0.5
-}));
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0, 200, 255, 0.6)";
-    ctx.fill();
-    p.x += p.dx;
-    p.y += p.dy;
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-  });
-  requestAnimationFrame(animateParticles);
-}
-animateParticles();
